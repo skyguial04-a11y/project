@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sign Up - K-EGG</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+     <link rel="icon" type="image/x-icon" href="images/keggfavicon.png">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&family=Passion+One:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body class="acc-body">
+
+   <header>
+        <nav class="container">
+    <div class="logo">
+        <img src="images/kegglogo.png" id="logoo">
+    </div>
+    
+    <ul class="nav-links">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="menu.html">Menu</a></li>
+        <li><a href="promos.html">Promos</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="gallery.html">Gallery</a></li>
+        <li><a href="contact.html">Contact</a></li>
+    </ul>
+    
+    <div class="promos-nav-icons">
+        <div class="acc-icon">
+            <a href="login.html"><img src="images/acciconn.png"></a>
+        </div>
+        <div class="cart-icon">
+            <a href="cart.html">🛒</a>
+        </div>
+    </div>
+        </nav>
+    </header>
+
+
+    <div class="acc-header-banner">
+        <h1 class="acc-banner-title">DON'T HAVE AN ACCOUNT? REGISTER NOW!</h1>
+    </div>
+
+    <div class="acc-main-container">
+        <div class="acc-split-wrapper">
+            
+            <div class="acc-side-panel">
+                <h2 class="acc-side-title">New here?<br>Create an account!</h2>
+                <p class="acc-side-text">Sign up to enjoy a faster checkout and track your orders.</p>
+                <div class="acc-side-img-box">
+                    <img src="images/egg sandwich.jpg" class="acc-side-food-img" alt="Food Item">
+                </div>
+            </div>
+
+            <div class="acc-form-panel">
+                <h2 class="acc-form-title">Create Your Account</h2>
+                <p class="acc-form-subtitle">Sign up to get started with K-EGG</p>
+
+                <form id="registrationForm">
+                    <div class="acc-input-group">
+                        <label class="acc-input-label">Mobile Number</label>
+                        <div class="acc-phone-row">
+                            <select class="acc-prefix-select">
+                                <option>+63</option>
+                            </select>
+                            <input type="tel" class="acc-field" placeholder="9XX XXX XXXX" required id="regPhone">
+                        </div>
+                        <p class="acc-note-text">We'll send you a verification code.</p>
+                    </div>
+
+                    <div class="acc-input-group">
+                         <label class="acc-input-label">Username</label>
+                         <div class="acc-secure-row">
+                             <input type="text" class="acc-field" placeholder="Enter your username" required id="regUsername">
+                        </div>
+                    </div>
+
+                    <div class="acc-input-group">
+                        <label class="acc-input-label">Password</label>
+                        <div class="acc-secure-row">
+                            <input type="password" class="acc-field" placeholder="Create a password" required id="regPass">
+                            <span class="acc-eye" id="togglePassEye">👁️</span>
+                        </div>
+                        <p class="acc-note-text">At least 6 characters with a number or symbol</p>
+                    </div>
+
+                    <div class="acc-input-group">
+                        <label class="acc-input-label">Confirm Password</label>
+                        <div class="acc-secure-row">
+                            <input type="password" class="acc-field" placeholder="Confirm your password" required id="regConfirmPass">
+                            <span class="acc-eye" id="toggleConfirmEye">👁️</span>
+                        </div>
+                    </div>
+
+                    <div class="acc-agreement-row">
+                        <input type="checkbox" class="acc-check-box" required id="regAgree">
+                        <label for="regAgree" class="acc-check-label">
+                            I agree to the <a href="terms.html" class="acc-gold-link">Terms and Conditions</a> and <a href="privacy.html" class="acc-gold-link">Privacy Policy</a>.
+                        </label>
+                    </div>
+
+                    <button type="submit" class="acc-submit-btn">SIGN UP</button>
+                </form>
+
+                <div class="acc-divider-block">
+                    <div class="acc-divider-line"></div>
+                    <span class="acc-divider-word">OR</span>
+                    <div class="acc-divider-line"></div>
+                </div>
+
+                <button class="acc-alt-google-btn">
+                    <img src="images/googleicon.svg" class="acc-google-icon" alt="Google">
+                    Continue with Google
+                </button>
+            </div>
+
+        </div>
+
+        <div class="acc-cards-row">
+            <div class="acc-promo-card-item">
+                <img src="images/fdaypromo.jpg" alt="Promo 1">
+            </div>
+            <div class="acc-promo-card-item">
+                <img src="images/b10promo.jpg" alt="Promo 2">
+            </div>
+            <div class="acc-promo-card-item">
+                <img src="images/vdaypromo.jpg" alt="Promo 3">
+            </div>
+        </div>
+    </div>
+
+    <footer>
+
+    <div class="footer-top">
+        <!-- LEFT -->
+        <div class="footer-column">
+        <div class="logo">
+            <img src="images/kegglogo.png" id="logoo" width="400px" height="299px">
+        </div>
+
+        <div class="tagline">
+            Korean-Style Egg Sandwiches<br>
+            Made Fresh Daily
+        </div>
+        </div>
+
+        <!-- HOURS -->
+        <div class="footer-column hours">
+        <h3>Hours</h3>
+
+        <p>
+          <strong>  Mon - Fri<br> </strong>
+            7 AM - 6PM<br>
+           <strong> Sat - Sun<br></strong>
+            8 AM - 10 PM
+        </p>
+        </div>
+
+        <!-- QUICK LINKS -->
+        <div class="footer-column links">
+        <h3>Quick Links</h3>
+
+        <a href="index.html">Home</a>
+        <a href="menu.html">Our Menu</a>
+        <a href="about.html">About Us</a>
+        <a href="contact.html">Contact Us</a>
+        </div>
+
+        <!-- FOLLOW US -->
+        <div class="footer-column">
+        <h3>Follow Us</h3>
+
+        <div class="socials">
+            <a href="https://web.facebook.com/profile.php?id=61573550045511"><img src="images/facebook-new.png" alt=""></a>
+            <a href="#"><img src="images/instagram-new.png" alt=""></a>
+            <a href="#"><img src="images/tiktok.png" alt=""></a>
+        </div>
+
+        <div class="foodpanda">
+            <div class="panda">
+                <img src="images/foodpanda.png" alt="" height="115" width="115">
+            </div>
+
+            <div class="foodpanda-text">
+            ALSO AVAILABLE AT<br>
+            FOOD PANDA!
+            </div>
+        </div>
+        </div>
+    </div>
+     <!-- BOTTOM -->
+    <div class="footer-bottom">
+
+      <h3><a href="terms.html" style="color:#888;text-decoration:none;">Terms and Conditions</a> | <a href="privacy.html" style="color:#888;text-decoration:none;">Privacy Policy</a></h3>
+
+      <div class="copyright">
+        © 2026 K-Egg. All Rights Reserved. &nbsp;·&nbsp; <a href="credits.html" style="color:#888;text-decoration:none;">Credits</a>
+      </div>
+
+    </div>
+
+  </footer>
+    <script src="script.js"></script>
+</body>
+</html>

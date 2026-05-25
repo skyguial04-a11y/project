@@ -1,0 +1,321 @@
+================================================================
+  K-EGG WEBSITE — BACKEND & DATABASE DOCUMENTATION
+  Project: K-Egg Maysan, Valenzuela
+  Stack:   Node.js + Express + MongoDB (Mongoose)
+  Port:    5000
+================================================================
+
+
+----------------------------------------------------------------
+1. OVERVIEW
+----------------------------------------------------------------
+
+The K-Egg backend is a REST API built with Node.js and Express.
+It connects to a local MongoDB database (kegg_db) using Mongoose.
+
+The backend handles:
+  - Customer registration and login (auth)
+  - Admin login (separate from customer accounts)
+  - Order placement and status tracking
+  - Menu item management
+  - Customer records
+  - Store settings
+  - Promotions
+
+To start the backend:
+  cd BACKEND/kegg-backend
+  npm start
+
+Server runs at: http://localhost:5000
+Health check:   http://localhost:5000/api/health
+
+
+----------------------------------------------------------------
+2. DATABASE: kegg_db
+----------------------------------------------------------------
+
+Database Name: kegg_db
+Connection:    mongodb://localhost:27017/kegg_db (local)
+               mongodb+srv://... (Atlas, when deployed)
+
+Collections:
+  - SIGN-UP       (registered customer accounts)
+  - orders        (customer orders)
+  - admins        (admin panel accounts)
+  - menuitems     (all menu products)
+  - customers     (customer profiles with order history)
+  - settings      (store configuration)
+  - promos        (promotional offers)
+
+
+----------------------------------------------------------------
+3. COLLECTIONS & SCHEMAS
+----------------------------------------------------------------
+
+--- 3.1 SIGN-UP (User Accounts) ---
+Collection: SIGN-UP
+Model file: models/User.js
+Purpose:    Stores customer accounts created via signup.html
+
+Fields:
+  _id          ObjectId    Auto-generated unique ID
+  username     String      Required, unique. Customer's display name.
+  phone        String      Required. Mobile number with country code.
+  password     String      Required. Stored as bcrypt hash (never plain text).
+  createdAt    Date        Auto-set when account is created.
+  updatedAt    Date        Auto-updated on changes.
+
+Notes:
+  - Passwords are automatically hashed using bcrypt (10 salt rounds)
+    before saving. Plain text passwords are never stored.
+  - The collection name "SIGN-UP" matches the existing MongoDB
+    collection created during development.
+
+
+--- 3.2 orders ---
+Collection: orders
+Model file: models/Order.js
+Purpose:    Stores every order placed through the checkout page.
+
+Fields:
+  _id            ObjectId    Auto-generated unique ID
+  ref            String      Required, unique. Format: "KEGG-XXXXXX"
+  customer       Object      Nested customer info:
+    .name        String      Customer's full name
+    .phone       String      Customer's phone number
+    .email       String      Customer's email (optional, default: "N/A")
+  items          Array       List of ordered items:
+    .name        String      Product name
+    .price       Number      Effective price (base + variation modifiers)
+    .quantity    Number      Quantity ordered
+    .img         String      Image path
+    .note        String      Per-item special instruction (e.g. "no onions")
+    .variations  Array       Selected variation labels (e.g. ["Large +₱20"])
+  subtotal       Number      Sum of all item prices x quantities
+  customization  Number      Customization fee (default: ₱15)
+  processing     Number      Processing fee (default: ₱11)
+  total          Number      Grand total (subtotal + fees)
+  paymentMethod  String      "Cash" or "GCash"
+  pickupDate     String      Selected pickup date (YYYY-MM-DD)
+  pickupTime     String      Selected pickup time (HH:MM)
+  notes          String      General order notes (default: "None")
+  status         String      Order lifecycle status:
+                               Pending → Preparing → Ready → Completed
+                               (or Cancelled)
+  createdAt      Date        Auto-set when order is placed
+  updatedAt      Date        Auto-updated on status changes
+
+
+--- 3.3 admins ---
+Collection: admins
+Model file: models/Admin.js
+Purpose:    Stores admin panel accounts. Separate from customer accounts.
+            You manage these manually using create-admin.js.
+
+Fields:
+  _id        ObjectId    Auto-generated unique ID
+  username   String      Required, unique. Admin login name.
+  password   String      Required. Stored as bcrypt hash.
+  role       String      "superadmin", "admin", or "staff"
+  isActive   Boolean     If false, admin cannot log in (default: true)
+  createdAt  Date        Auto-set on creation
+  updatedAt  Date        Auto-updated on changes
+
+To add a new admin:
+  1. Open BACKEND/kegg-backend/create-admin.js
+  2. Add entry to the adminAccounts array
+  3. Run: node create-admin.js
+
+Default admin account:
+  Username: kegg_admin
+  Password: Kegg@2026!
+  Role:     superadmin
+
+
+--- 3.4 menuitems ---
+Collection: menuitems
+Model file: models/MenuItem.js
+Purpose:    Stores all menu products. Seeded via seed-all.js.
+
+Fields:
+  _id          ObjectId    Auto-generated unique ID
+  name         String      Required. Product name.
+  category     String      Required. One of:
+                             "rice bowls", "sides", "sandwiches",
+                             "drinks", "ramen", "snacks"
+  description  String      Short product description (optional)
+  price        Number      Required. Base price in Philippine Peso.
+  stock        Number      Current stock count (default: 50)
+  imagePath    String      Relative path to product image
+  status       String      "available", "unavailable", or "out of stock"
+  variations   Array       Optional size/addon options:
+    .label         String  Display name (e.g. "Large")
+    .type          String  "size" or "addon"
+    .priceModifier Number  Additional cost (e.g. 20 for +₱20)
+  orderCount   Number      How many times this item has been ordered
+  createdAt    Date        Auto-set
+  updatedAt    Date        Auto-updated
+
+Notes:
+  - Soft delete is used: products are never permanently deleted.
+    Instead, status is set to "unavailable".
+  - Run "node seed-all.js" to populate all 37 menu items.
+
+
+--- 3.5 customers ---
+Collection: customers
+Model file: models/Customer.js
+Purpose:    Tracks customer order history and spending.
+            Separate from SIGN-UP — this is populated when orders
+            are placed, not when accounts are created.
+
+Fields:
+  _id          ObjectId    Auto-generated unique ID
+  name         String      Required. Customer's name from checkout.
+  phone        String      Required, unique. Customer's phone number.
+  email        String      Email address (default: "N/A")
+  ordersCount  Number      Total number of orders placed (default: 0)
+  totalSpent   Number      Total amount spent in Philippine Peso (default: 0)
+  lastOrderAt  Date        Date of most recent order (default: null)
+  createdAt    Date        Auto-set
+  updatedAt    Date        Auto-updated
+
+
+--- 3.6 settings ---
+Collection: settings
+Model file: models/Settings.js
+Purpose:    Stores store configuration. Only one document exists.
+            Admin can update these from the admin panel.
+
+Fields:
+  _id              ObjectId    Auto-generated unique ID
+  storeName        String      Store display name (default: "K-Egg Maysan")
+  contactNumber    String      Store phone number
+  email            String      Store email address
+  address          String      Physical store address
+  operatingHours   String      Business hours description
+  gcashName        String      GCash account name for payments
+  gcashNumber      String      GCash account number for payments
+  deliveryFee      Number      Delivery fee (default: 0 — pickup only)
+  customizationFee Number      Customization fee per order (default: 15)
+  processingFee    Number      Processing fee per order (default: 11)
+  createdAt        Date        Auto-set
+  updatedAt        Date        Auto-updated
+
+
+--- 3.7 promos ---
+Collection: promos
+Model file: models/Promo.js
+Purpose:    Stores promotional offers shown on the promos page.
+
+Fields:
+  _id          ObjectId    Auto-generated unique ID
+  title        String      Required. Promo name.
+  description  String      Required. Promo details.
+  imagePath    String      Path to promo image
+  validUntil   String      Validity period (e.g. "June 15, 2026")
+  isActive     Boolean     If false, promo is hidden (default: true)
+  createdAt    Date        Auto-set
+  updatedAt    Date        Auto-updated
+
+
+----------------------------------------------------------------
+4. API ENDPOINTS
+----------------------------------------------------------------
+
+Base URL: http://localhost:5000
+
+--- Authentication (Customer) ---
+POST   /api/auth/signup        Register a new customer account
+POST   /api/auth/login         Log in as a customer
+
+--- Authentication (Admin) ---
+POST   /api/admin/login        Log in as an admin
+POST   /api/admin/logout       Log out admin session
+
+--- Orders ---
+POST   /api/orders             Place a new order (from checkout)
+GET    /api/orders             Get all orders (admin use)
+PATCH  /api/orders/:id/status  Advance order status (admin use)
+
+--- Customers ---
+GET    /api/customers          Get all registered users (admin use)
+GET    /api/customers/count    Get total customer count
+
+--- Health ---
+GET    /api/health             Check if server and DB are connected
+
+
+----------------------------------------------------------------
+5. FILE STRUCTURE
+----------------------------------------------------------------
+
+BACKEND/kegg-backend/
+  models/
+    Admin.js        Admin account schema
+    Customer.js     Customer profile schema
+    MenuItem.js     Menu product schema (with variations)
+    Order.js        Order schema (with per-item notes)
+    Promo.js        Promotion schema
+    Settings.js     Store settings schema
+    User.js         Customer login account schema
+
+  routes/
+    admin.js        Admin login/logout endpoints
+    auth.js         Customer signup/login endpoints
+    customers.js    Customer list endpoints
+    orders.js       Order CRUD endpoints
+
+  server.js         Main Express app — connects to MongoDB,
+                    registers all routes, starts server on port 5000
+
+  create-admin.js   Script to create admin accounts
+  seed-all.js       Script to populate menuitems, settings, promos
+
+  package.json      Node.js dependencies
+  .env              Environment variables (MONGO_URI, PORT)
+
+
+----------------------------------------------------------------
+6. HOW TO RUN
+----------------------------------------------------------------
+
+Step 1: Make sure MongoDB is running
+  net start MongoDB
+  (or run: mongod --dbpath C:\data\db)
+
+Step 2: Start the backend
+  cd "BACKEND/kegg-backend"
+  npm start
+
+Step 3: Verify connection
+  Open browser: http://localhost:5000/api/health
+  Expected:     {"status":"ok","db":"connected"}
+
+Step 4: Seed the database (first time only)
+  node seed-all.js
+
+Step 5: Create admin account (first time only)
+  node create-admin.js
+
+
+----------------------------------------------------------------
+7. SECURITY NOTES
+----------------------------------------------------------------
+
+- All passwords (customer and admin) are hashed with bcrypt
+  before being stored. Plain text passwords are never saved.
+
+- The .env file contains sensitive credentials (MONGO_URI).
+  Do NOT commit .env to version control (GitHub, etc.).
+
+- Admin sessions are stored in sessionStorage (browser-side).
+  The admin panel redirects to admin-login.html if no session exists.
+
+- The admin login endpoint is separate from the customer login
+  endpoint to prevent customers from accessing the admin panel.
+
+================================================================
+  Last updated: May 2026
+  K-Egg Maysan, Valenzuela City
+================================================================

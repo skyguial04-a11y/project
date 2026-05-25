@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Account - K-EGG</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&family=Passion+One:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body class="acc-body">
+     <header>
+        <nav class="container">
+            <div class="logo">
+                <img src="images/kegglogo.png" id="logoo">
+            </div>
+            
+            <ul class="nav-links">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="menu.html">Menu</a></li>
+                <li><a href="promos.html">Promos</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="gallery.html">Gallery</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+            
+            <div class="promos-nav-icons">
+                <div class="acc-icon">
+                    <a href="login.html"><img src="images/acciconn.png"></a>
+                </div>
+                <div class="cart-icon">
+                    <a href="cart.html">🛒</a>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <div class="acc-page-bg">
+        <div class="acc-container">
+            <div class="acc-card-box">
+                <div class="acc-avatar-circle">
+                    <span class="acc-avatar-icon">👤</span>
+                </div>
+                <h2 class="acc-main-title">Welcome Back!</h2>
+                <p class="acc-subtitle">Log in to continue to K-EGG</p>
+                
+                <form id="loginForm">
+                    <div class="acc-field-group">
+                        <label class="acc-label">Mobile Number</label>
+                        <div class="acc-phone-input-row">
+                            <select class="acc-country-select">
+                                <option>+63</option>
+                            </select>
+                            <input type="tel" class="acc-input-field" placeholder="9XX XXX XXXX" required id="loginPhone">
+                        </div>
+                        <p class="acc-helper-text">We'll send you a verification code.</p>
+                    </div>
+                    
+                    <div class="acc-field-group">
+                        <label class="acc-label">Username</label>
+                        <div class="acc-password-row">
+                            <input type="text" class="acc-input-field" placeholder="Enter your username" required id="loginUsername">
+                        </div>
+                    </div>
+
+                    <div class="acc-field-group">
+                        <div class="acc-label-row">
+                            <label class="acc-label">Password</label>
+                            <a href="#" class="acc-link-highlight">Forgot password?</a>
+                        </div>
+                        <div class="acc-password-row">
+                            <input type="password" class="acc-input-field" placeholder="Enter your password" required id="loginPass">
+                            <span class="acc-pass-toggle" id="eyeToggle">👁️</span>
+                        </div>
+                    </div>
+                    
+                    <button type="submit" class="acc-primary-btn">LOG IN</button>
+                </form>
+                
+                <div class="acc-divider-row">
+                    <div class="acc-line"></div>
+                    <span class="acc-divider-text">OR</span>
+                    <div class="acc-line"></div>
+                </div>
+                
+                <button class="acc-google-btn">
+                    <img src="images/googleicon.svg" class="acc-google-img" alt="Google">
+                    Continue with Google
+                </button>
+                
+                <p class="acc-footer-text">Don't have an account? <span class="acc-link-highlight" id="switchSignup"><a href="signup.html">Sign up</a></span></p>
+            </div>
+        </div>
+    </div>
+
+   <footer>
+
+    <div class="footer-top">
+        <!-- LEFT -->
+        <div class="footer-column">
+        <div class="logo">
+            <img src="images/kegglogo.png" id="logoo" width="400px" height="299px">
+        </div>
+
+        <div class="tagline">
+            Korean-Style Egg Sandwiches<br>
+            Made Fresh Daily
+        </div>
+        </div>
+
+        <!-- HOURS -->
+        <div class="footer-column hours">
+        <h3>Hours</h3>
+
+        <p>
+          <strong>  Mon - Fri<br> </strong>
+            7 AM - 6PM<br>
+           <strong> Sat - Sun<br></strong>
+            8 AM - 10 PM
+        </p>
+        </div>
+
+        <!-- QUICK LINKS -->
+        <div class="footer-column links">
+        <h3>Quick Links</h3>
+
+        <a href="index.html">Home</a>
+        <a href="menu.html">Our Menu</a>
+        <a href="about.html">About Us</a>
+        <a href="contact.html">Contact Us</a>
+        </div>
+
+        <!-- FOLLOW US -->
+        <div class="footer-column">
+        <h3>Follow Us</h3>
+
+        <div class="socials">
+            <a href="https://web.facebook.com/profile.php?id=61573550045511"><img src="images/facebook-new.png" alt=""></a>
+            <a href="#"><img src="images/instagram-new.png" alt=""></a>
+            <a href="#"><img src="images/tiktok.png" alt=""></a>
+        </div>
+
+        <div class="foodpanda">
+            <div class="panda">
+                <img src="images/foodpanda.png" alt="" height="115" width="115">
+            </div>
+
+            <div class="foodpanda-text">
+            ALSO AVAILABLE AT<br>
+            FOOD PANDA!
+            </div>
+        </div>
+        </div>
+    </div>
+     <!-- BOTTOM -->
+    <div class="footer-bottom">
+
+      <h3><a href="terms.html" style="color:#888;text-decoration:none;">Terms and Conditions</a> | <a href="privacy.html" style="color:#888;text-decoration:none;">Privacy Policy</a></h3>
+
+      <div class="copyright">
+        © 2026 K-Egg. All Rights Reserved. &nbsp;·&nbsp; <a href="credits.html" style="color:#888;text-decoration:none;">Credits</a>
+      </div>
+
+    </div>
+
+  </footer>
+  <script src="script.js"></script>
+</body>
+</html>

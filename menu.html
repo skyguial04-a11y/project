@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>K-Egg | Our Menu</title>
+    <link rel="stylesheet" href="style.css">
+     <link rel="icon" type="image/x-icon" href="images/keggfavicon.png">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700;900&family=Passion+One:wght@700&display=swap" rel="stylesheet">
+</head>
+<body class="menu-page">
+
+    <header>
+        <nav class="container">
+            <div class="logo">
+                <img src="images/kegglogo.png" id="logoo">
+            </div>
+
+            <ul class="nav-links" id="navLinks">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="menu.html" class="active">Menu</a></li>
+                <li><a href="promos.html">Promos</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="gallery.html">Gallery</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+
+            <div class="promos-nav-icons">
+                <div class="acc-icon">
+                    <a href="login.html"><img src="images/acciconn.png"></a>
+                </div>
+                <div class="cart-icon">
+                    <a href="cart.html">🛒</a>
+                </div>
+                <button class="hamburger" id="hamburger" aria-label="Toggle menu">
+                    <span></span><span></span><span></span>
+                </button>
+            </div>
+        </nav>
+    </header>
+
+    <main class="container">
+        <section class="menu-intro">
+            <h2>OUR MENU</h2>
+            <p>Fresh korean-style snacks made with love</p>
+            <input type="text" placeholder="Search menu..." class="search-bar">
+        </section>
+
+        <section class="menu-filters">
+            <button class="filter-btn active" data-filter="all">All</button>
+            <button class="filter-btn" data-filter="sandwiches">Sandwiches</button>
+            <button class="filter-btn" data-filter="rice">Rice</button>
+            <button class="filter-btn" data-filter="ramen">Ramen</button>
+            <button class="filter-btn" data-filter="snacks">Snacks</button>
+            <button class="filter-btn" data-filter="drinks">Drinks</button>
+        </section>
+
+        <section class="menu-grid" id="menuGrid">
+        </section>
+    </main>
+
+    <footer>
+    <div class="footer-top">
+        <div class="footer-column">
+        <div class="logo">
+            <img src="images/kegglogo.png" id="logoo" width="400px" height="299px">
+        </div>
+
+        <div class="tagline">
+            Korean-Style Egg Sandwiches<br>
+            Made Fresh Daily
+        </div>
+        </div>
+
+        <div class="footer-column hours">
+        <h3>Hours</h3>
+
+        <p>
+          <strong>  Mon - Fri<br> </strong>
+            7 AM - 6PM<br>
+           <strong> Sat - Sun<br></strong>
+            8 AM - 10 PM
+        </p>
+        </div>
+
+        <div class="footer-column links">
+        <h3>Quick Links</h3>
+
+        <a href="index.html">Home</a>
+        <a href="menu.html">Our Menu</a>
+        <a href="about.html">About Us</a>
+        <a href="contact.html">Contact Us</a>
+        </div>
+
+        <div class="footer-column">
+        <h3>Follow Us</h3>
+
+        <div class="socials">
+            <a href="https://web.facebook.com/profile.php?id=61573550045511"><img src="images/facebook-new.png" alt=""></a>
+            <a href="#"><img src="images/instagram-new.png" alt=""></a>
+            <a href="#"><img src="https://img.icons8.com/ios-filled/50/000000/tiktok.png" alt="TikTok"></a>
+        </div>
+
+        <div class="foodpanda">
+            <div class="panda">
+                <img src="images/foodpanda.png" alt="" height="115" width="115">
+            </div>
+
+            <div class="foodpanda-text">
+            ALSO AVAILABLE AT<br>
+            FOOD PANDA!
+            </div>
+        </div>
+        </div>
+    </div>
+    <div class="footer-bottom">
+
+      <h3><a href="terms.html" style="color:#888;text-decoration:none;">Terms and Conditions</a> | <a href="privacy.html" style="color:#888;text-decoration:none;">Privacy Policy</a></h3>
+
+      <div class="copyright">
+        © 2026 K-Egg. All Rights Reserved. &nbsp;·&nbsp; <a href="credits.html" style="color:#888;text-decoration:none;">Credits</a>
+      </div>
+    </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
