@@ -1,0 +1,24 @@
+{
+  "type": "Compass Connections",
+  "version": {
+    "$numberInt": "1"
+  },
+  "connections": [
+    {
+      "id": "98920937-8ade-4caf-8d67-def85f71a2de",
+      "lastUsed": {
+        "$date": {
+          "$numberLong": "1779664458508"
+        }
+      },
+      "favorite": {
+        "name": "K-egg Maysan"
+      },
+      "savedConnectionType": "favorite",
+      "connectionOptions": {
+        "connectionString": "mongodb://localhost:27017/",
+        "oidc": {}
+      }
+    }
+  ]
+}

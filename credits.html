@@ -1,0 +1,406 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>K-Egg | Credits & Fun Facts</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="icon" type="image/x-icon" href="images/keggfavicon.png">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700;900&family=Passion+One:wght@700&family=Bebas+Neue&display=swap" rel="stylesheet">
+    <style>
+        .credits-hero {
+            background: linear-gradient(135deg, #FAD325 0%, #f0c000 100%);
+            padding: 80px 20px 60px;
+            text-align: center;
+        }
+        .credits-hero .tag {
+            display: inline-block;
+            background: #000;
+            color: #FAD325;
+            font-weight: 900;
+            font-size: 0.75rem;
+            letter-spacing: 3px;
+            padding: 5px 16px;
+            border-radius: 50px;
+            margin-bottom: 20px;
+            text-transform: uppercase;
+        }
+        .credits-hero h1 {
+            font-family: 'Bebas Neue', 'Passion One', cursive;
+            font-size: 4rem;
+            color: #000;
+            line-height: 1;
+            margin-bottom: 12px;
+            letter-spacing: 2px;
+        }
+        .credits-hero p {
+            font-size: 1rem;
+            color: #333;
+            max-width: 500px;
+            margin: 0 auto;
+            font-weight: 600;
+        }
+
+        /* Fun facts strip */
+        .fun-facts-strip {
+            background: #000;
+            padding: 50px 20px;
+            text-align: center;
+        }
+        .fun-facts-strip h2 {
+            font-family: 'Passion One', cursive;
+            font-size: 2rem;
+            color: #FAD325;
+            margin-bottom: 30px;
+        }
+        .facts-grid {
+            display: flex;
+            justify-content: center;
+            gap: 25px;
+            flex-wrap: wrap;
+            max-width: 900px;
+            margin: 0 auto;
+        }
+        .fact-card {
+            background: #1a1a1a;
+            border: 1px solid #333;
+            border-radius: 16px;
+            padding: 25px 20px;
+            width: 200px;
+            text-align: center;
+        }
+        .fact-card .fact-emoji { font-size: 2.5rem; margin-bottom: 12px; }
+        .fact-card .fact-num {
+            font-family: 'Passion One', cursive;
+            font-size: 2.2rem;
+            color: #FAD325;
+            line-height: 1;
+            margin-bottom: 6px;
+        }
+        .fact-card .fact-label { font-size: 0.8rem; color: #888; font-weight: 600; }
+
+        /* Team section */
+        .team-section {
+            background: #f7f7f7;
+            padding: 80px 20px;
+            text-align: center;
+        }
+        .team-section .section-tag {
+            display: inline-block;
+            background: #FAD325;
+            color: #000;
+            font-weight: 900;
+            font-size: 0.75rem;
+            letter-spacing: 2px;
+            padding: 5px 14px;
+            border-radius: 50px;
+            margin-bottom: 14px;
+            text-transform: uppercase;
+        }
+        .team-section h2 {
+            font-family: 'Passion One', cursive;
+            font-size: 2.8rem;
+            color: #000;
+            margin-bottom: 8px;
+        }
+        .team-section .team-sub {
+            font-size: 0.9rem;
+            color: #777;
+            margin-bottom: 50px;
+        }
+        .team-grid {
+            display: flex;
+            justify-content: center;
+            gap: 40px;
+            flex-wrap: wrap;
+            max-width: 900px;
+            margin: 0 auto;
+        }
+        .team-card {
+            background: #fff;
+            border-radius: 24px;
+            padding: 40px 35px;
+            width: 340px;
+            box-shadow: 0 8px 30px rgba(0,0,0,0.08);
+            text-align: center;
+            transition: transform 0.3s;
+        }
+        .team-card:hover { transform: translateY(-6px); }
+        .team-avatar {
+            width: 90px;
+            height: 90px;
+            background: #FAD325;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-family: 'Passion One', cursive;
+            font-size: 2.5rem;
+            color: #000;
+            margin: 0 auto 20px;
+        }
+        .team-name {
+            font-family: 'Passion One', cursive;
+            font-size: 1.6rem;
+            color: #000;
+            margin-bottom: 4px;
+            line-height: 1.1;
+        }
+        .team-role {
+            font-size: 0.82rem;
+            color: #888;
+            font-weight: 600;
+            margin-bottom: 20px;
+        }
+        .team-divider {
+            border: none;
+            border-top: 1px solid #f0f0f0;
+            margin-bottom: 20px;
+        }
+        .team-portfolio-btn {
+            display: inline-block;
+            background: #FAD325;
+            color: #000;
+            font-weight: 900;
+            font-size: 0.88rem;
+            padding: 12px 28px;
+            border-radius: 50px;
+            transition: background 0.2s, transform 0.2s;
+        }
+        .team-portfolio-btn:hover { background: #f0c000; transform: scale(1.03); }
+
+        /* School project banner */
+        .school-banner {
+            background: #FAD325;
+            padding: 60px 20px;
+            text-align: center;
+        }
+        .school-banner h2 {
+            font-family: 'Passion One', cursive;
+            font-size: 2.5rem;
+            color: #000;
+            margin-bottom: 12px;
+        }
+        .school-banner p {
+            font-size: 0.95rem;
+            color: #333;
+            max-width: 600px;
+            margin: 0 auto 8px;
+            line-height: 1.7;
+        }
+        .school-banner .school-name {
+            font-weight: 900;
+            font-size: 1rem;
+            color: #000;
+            margin-top: 16px;
+        }
+
+        /* Tech stack */
+        .tech-section {
+            background: #fff;
+            padding: 70px 20px;
+            text-align: center;
+        }
+        .tech-section h2 {
+            font-family: 'Passion One', cursive;
+            font-size: 2.2rem;
+            color: #000;
+            margin-bottom: 40px;
+        }
+        .tech-grid {
+            display: flex;
+            justify-content: center;
+            gap: 16px;
+            flex-wrap: wrap;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        .tech-pill {
+            background: #f7f7f7;
+            border: 2px solid #e0e0e0;
+            border-radius: 50px;
+            padding: 10px 22px;
+            font-weight: 700;
+            font-size: 0.88rem;
+            color: #333;
+            transition: border-color 0.2s, background 0.2s;
+        }
+        .tech-pill:hover { border-color: #FAD325; background: #fffbe6; }
+        .tech-pill.highlight { background: #FAD325; border-color: #FAD325; color: #000; }
+
+        @media (max-width: 768px) {
+            .credits-hero h1 { font-size: 2.8rem; }
+            .team-card { width: 100%; max-width: 340px; }
+        }
+        @media (max-width: 425px) {
+            .credits-hero h1 { font-size: 2.2rem; }
+            .fact-card { width: 140px; }
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <nav class="container">
+            <div class="logo"><img src="images/kegglogo.png" id="logoo"></div>
+            <ul class="nav-links" id="navLinks">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="menu.html">Menu</a></li>
+                <li><a href="promos.html">Promos</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="gallery.html">Gallery</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+            <div class="promos-nav-icons">
+                <div class="acc-icon"><a href="login.html"><img src="images/acciconn.png"></a></div>
+                <div class="cart-icon"><a href="cart.html">🛒</a></div>
+                <button class="hamburger" id="hamburger" aria-label="Toggle menu">
+                    <span></span><span></span><span></span>
+                </button>
+            </div>
+        </nav>
+    </header>
+
+    <!-- HERO -->
+    <section class="credits-hero">
+        <span class="tag">🎓 School Project</span>
+        <h1>BEHIND THE EGG</h1>
+        <p>Meet the team who built this website from scratch as part of their academic project.</p>
+    </section>
+
+    <!-- FUN FACTS -->
+    <section class="fun-facts-strip">
+        <h2>FUN FACTS ABOUT THIS PROJECT</h2>
+        <div class="facts-grid">
+            <div class="fact-card">
+                <div class="fact-emoji">📄</div>
+                <div class="fact-num">10+</div>
+                <div class="fact-label">HTML Pages Built</div>
+            </div>
+            <div class="fact-card">
+                <div class="fact-emoji">🎨</div>
+                <div class="fact-num">3,000+</div>
+                <div class="fact-label">Lines of CSS</div>
+            </div>
+            <div class="fact-card">
+                <div class="fact-emoji">⚡</div>
+                <div class="fact-num">900+</div>
+                <div class="fact-label">Lines of JavaScript</div>
+            </div>
+            <div class="fact-card">
+                <div class="fact-emoji">🗄️</div>
+                <div class="fact-num">7</div>
+                <div class="fact-label">MongoDB Collections</div>
+            </div>
+            <div class="fact-card">
+                <div class="fact-emoji">🍳</div>
+                <div class="fact-num">37</div>
+                <div class="fact-label">Menu Items</div>
+            </div>
+        </div>
+    </section>
+
+    <!-- TEAM -->
+    <section class="team-section">
+        <span class="section-tag">The Developers</span>
+        <h2>MEET THE TEAM</h2>
+        <p class="team-sub">Two students who turned a food business idea into a full-stack web application.</p>
+
+        <div class="team-grid">
+
+            <div class="team-card">
+                <div class="team-avatar">C</div>
+                <h3 class="team-name">Cahambing,<br>Maria Mhikaela</h3>
+                <p class="team-role">Co-Developer · Designer</p>
+                <hr class="team-divider">
+                <a href="E-PORTFOLIO/Mhika Cahambing/index.html" class="team-portfolio-btn" target="_blank">
+                    View e-Portfolio →
+                </a>
+            </div>
+
+            <div class="team-card">
+                <div class="team-avatar">G</div>
+                <h3 class="team-name">Guial,<br>Francesca Margarette</h3>
+                <p class="team-role">Co-Developer · Designer</p>
+                <hr class="team-divider">
+                <a href="E-PORTFOLIO/Francesca Guial/index.html" class="team-portfolio-btn" target="_blank">
+                    View e-Portfolio →
+                </a>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- SCHOOL BANNER -->
+    <section class="school-banner">
+        <h2>🎓 THIS IS A SCHOOL PROJECT</h2>
+        <p>
+            This website was developed as an academic requirement. It showcases a full-stack web application
+            for <strong>K-Egg</strong> — a Korean-style egg sandwich food business located in
+            Maysan, Valenzuela City.
+        </p>
+        <p>
+            The project demonstrates skills in HTML, CSS, JavaScript, Node.js, Express, and MongoDB.
+        </p>
+        <p class="school-name">📚 Submitted as part of our course requirements · 2026</p>
+    </section>
+
+    <!-- TECH STACK -->
+    <section class="tech-section">
+        <h2>TECHNOLOGIES USED</h2>
+        <div class="tech-grid">
+            <span class="tech-pill highlight">HTML5</span>
+            <span class="tech-pill highlight">CSS3</span>
+            <span class="tech-pill highlight">JavaScript</span>
+            <span class="tech-pill">Node.js</span>
+            <span class="tech-pill">Express.js</span>
+            <span class="tech-pill">MongoDB</span>
+            <span class="tech-pill">Mongoose</span>
+            <span class="tech-pill">bcrypt</span>
+            <span class="tech-pill">Google Fonts</span>
+            <span class="tech-pill">Google Maps API</span>
+            <span class="tech-pill">VS Code</span>
+            <span class="tech-pill">MongoDB Compass</span>
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer>
+        <div class="footer-top">
+            <div class="footer-column">
+                <div class="logo"><img src="images/kegglogo.png" alt="K-Egg Logo"></div>
+                <div class="tagline">Korean-Style Egg Sandwiches<br>Made Fresh Daily</div>
+            </div>
+            <div class="footer-column hours">
+                <h3>Hours</h3>
+                <p><strong>Mon - Fri</strong><br>7 AM - 6 PM<br><strong>Sat - Sun</strong><br>8 AM - 10 PM</p>
+            </div>
+            <div class="footer-column links">
+                <h3>Quick Links</h3>
+                <a href="index.html">Home</a>
+                <a href="menu.html">Our Menu</a>
+                <a href="about.html">About Us</a>
+                <a href="contact.html">Contact Us</a>
+            </div>
+            <div class="footer-column">
+                <h3>Follow Us</h3>
+                <div class="socials">
+                    <a href="https://web.facebook.com/profile.php?id=61573550045511"><img src="images/facebook-new.png" alt="Facebook"></a>
+                    <a href="https://www.instagram.com/keggvalenzuela/"><img src="images/instagram-new.png" alt="Instagram"></a>
+                    <a href="https://www.tiktok.com/@keggvalenzuela"><img src="https://img.icons8.com/ios-filled/50/000000/tiktok.png" alt="TikTok"></a>
+                </div>
+                <div class="foodpanda">
+                    <div class="panda"><img src="images/foodpanda.png" alt="FoodPanda"></div>
+                    <div class="foodpanda-text">ALSO AVAILABLE AT<br>FOOD PANDA!</div>
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <h3><a href="terms.html" style="color:#888;text-decoration:none;">Terms and Conditions</a> | <a href="privacy.html" style="color:#888;text-decoration:none;">Privacy Policy</a></h3>
+            <div class="copyright">© 2026 K-Egg. All Rights Reserved.</div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>

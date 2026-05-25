@@ -1,0 +1,255 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>K-Egg | Admin Management Panel</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700;900&family=Passion+One:wght@700&display=swap" rel="stylesheet">
+</head>
+<body>
+
+<div class="admin-page-wrapper">
+
+    <div class="sidebar">
+        <div class="sidebar-logo">
+            <span class="logo-main">K-EGG</span>
+            <span class="logo-sub">Management Suite</span>
+        </div>
+        
+        <div class="sidebar-nav">
+            <div class="nav-section-label">OVERVIEW</div>
+            <button class="nav-item active" onclick="switchPage('dashboard')">Live Dashboard</button>
+            
+            <div class="nav-section-label">MANAGEMENT</div>
+            <button class="nav-item" onclick="switchPage('products')">Menu Products</button>
+            <button class="nav-item" onclick="switchPage('inventory')">Stock Inventory</button>
+            <button class="nav-item" onclick="switchPage('orders')">Client Orders</button>
+            
+            <div class="nav-section-label">REGISTRY</div>
+            <button class="nav-item" onclick="switchPage('customers')">Customer Index</button>
+            
+            <div class="nav-section-label">SYSTEM</div>
+            <a href="menu.html" class="nav-item exit-btn">Exit To Storefront</a>
+            <button class="nav-item exit-btn" onclick="adminLogout()" style="margin-top:8px;border-color:#c92a2a;color:#c92a2a;">Logout</button>
+        </div>
+    </div>
+
+    <div class="main-content">
+        <div class="topbar">
+            <h1 class="topbar-title" id="pageTitleDisplay">Dashboard</h1>
+            <div class="topbar-user">
+                <div class="user-avatar">A</div>
+                <div class="user-name">Administrator</div>
+            </div>
+        </div>
+
+        <div id="view-dashboard" class="page-view active-page">
+            <div class="stats-grid">
+                <div class="stat-card yellow-card">
+                    <div class="stat-num" id="dash-total-products">0</div>
+                    <div class="stat-lbl">Active Products</div>
+                </div>
+                <div class="stat-card black-card">
+                    <div class="stat-num" id="dash-total-orders">0</div>
+                    <div class="stat-lbl">Processed Orders</div>
+                </div>
+                <div class="stat-card white-card">
+                    <div class="stat-num" id="dash-total-customers">0</div>
+                    <div class="stat-lbl">Unique Customers</div>
+                </div>
+                <div class="stat-card white-card" style="border-left: 5px solid #c92a2a;">
+                    <div class="stat-num" id="dash-low-stock" style="color: #c92a2a;">0</div>
+                    <div class="stat-lbl">Critical Low Stocks</div>
+                </div>
+            </div>
+
+            <div class="dashboard-tables">
+                <div class="dash-box">
+                    <h3 class="box-title">Critical Inventory Alerts</h3>
+                    <table class="simple-table">
+                        <thead>
+                            <tr>
+                                <th>Product Name</th>
+                                <th>Stock Count</th>
+                                <th>Status Flag</th>
+                            </tr>
+                        </thead>
+                        <tbody id="dash-alerts-table">
+                            <tr>
+                                <td colspan="3">All menu item stocks are running stable.</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+
+                <div class="dash-box">
+                    <h3 class="box-title">Recently Configured Items</h3>
+                    <table class="simple-table">
+                        <thead>
+                            <tr>
+                                <th>Item Name</th>
+                                <th>Category</th>
+                                <th>Retail Price</th>
+                            </tr>
+                        </thead>
+                        <tbody id="dash-recent-table">
+                            <tr>
+                                <td colspan="3">No configured system items identified.</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+
+        <div id="view-products" class="page-view">
+            <div class="action-bar">
+                <input type="text" id="prodSearchInput" class="form-input search-box" placeholder="Search product catalogs by name on the fly..." onkeyup="runProductFilters()">
+                <select id="prodCategoryFilter" class="form-input select-box" onchange="runProductFilters()">
+                    <option value="all">All Categories</option>
+                    <option value="sandwiches">Sandwiches</option>
+                    <option value="rice bowls">Rice Bowls</option>
+                    <option value="drinks">Drinks</option>
+                    <option value="sides">Sides</option>
+                </select>
+                <button class="action-btn" onclick="openProductModal(false)">+ Deploy New Product</button>
+            </div>
+
+            <table class="main-data-table">
+                <thead>
+                    <tr>
+                        <th>Product Specification</th>
+                        <th>Classification Category</th>
+                        <th>Retail Price</th>
+                        <th>Pipeline Operational Status</th>
+                        <th>Management Controls</th>
+                    </tr>
+                </thead>
+                <tbody id="products-table-body">
+                </tbody>
+            </table>
+        </div>
+
+        <div id="view-inventory" class="page-view">
+            <div class="action-bar">
+                <input type="text" id="invSearchInput" class="form-input search-box" placeholder="Filter operational inventories..." onkeyup="runInventoryFilters()">
+            </div>
+
+            <table class="main-data-table">
+                <thead>
+                    <tr>
+                        <th>Product Label</th>
+                        <th>Current Real Stock Count</th>
+                        <th>Pipeline Visibility Flag</th>
+                        <th>Instant Pipeline Adjustments</th>
+                    </tr>
+                </thead>
+                <tbody id="inventory-table-body">
+                </tbody>
+            </table>
+        </div>
+
+        <div id="view-orders" class="page-view">
+            <table class="main-data-table">
+                <thead>
+                    <tr>
+                        <th>Order Reference</th>
+                        <th>Customer Specifications</th>
+                        <th>Purchased Items & Summary</th>
+                        <th>Grand Total Block</th>
+                        <th>Schedule Fulfilment</th>
+                        <th>Operational Action</th>
+                    </tr>
+                </thead>
+                <tbody id="orders-table-body">
+                </tbody>
+            </table>
+        </div>
+
+        <div id="view-customers" class="page-view">
+            <table class="main-data-table">
+                <thead>
+                    <tr>
+                        <th>Customer Name Identification</th>
+                        <th>Telephone Number</th>
+                        <th>Email Address Reference</th>
+                        <th>Pipeline Volume Summary</th>
+                    </tr>
+                </thead>
+                <tbody id="customers-table-body">
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+</div>
+
+<div class="modal-overlay" id="productFormModal">
+    <div class="modal-card">
+        <h2 class="modal-header-title" id="modalFormTitle">Deploy New Product Listing</h2>
+        
+        <div class="input-group">
+            <label class="input-lbl">Product Specification Title *</label>
+            <input type="text" id="formProdName" class="form-input" placeholder="e.g., Premium Spam Egg Sandwich">
+        </div>
+        <div class="input-group">
+            <label class="input-lbl">Classification Category</label>
+            <select id="formProdCategory" class="form-input">
+                <option value="sandwiches">Sandwiches</option>
+                <option value="rice bowls">Rice Bowls</option>
+                <option value="drinks">Drinks</option>
+                <option value="sides">Sides</option>
+            </select>
+        </div>
+        <div class="input-group">
+            <label class="input-lbl">Retail Price (₱) *</label>
+            <input type="number" id="formProdPrice" class="form-input" placeholder="120">
+        </div>
+        <div class="input-group">
+            <label class="input-lbl">Starting Stock Qty</label>
+            <input type="number" id="formProdStock" class="form-input" value="50">
+        </div>
+        <div class="input-group">
+            <label class="input-lbl">Availability Rules Status</label>
+            <select id="formProdStatus" class="form-input">
+                <option value="available">Available</option>
+                <option value="unavailable">Unavailable</option>
+                <option value="out of stock">Out of Stock</option>
+            </select>
+        </div>
+        
+        <div class="modal-buttons-row">
+            <button class="cancel-btn" onclick="closeProductModal()">Cancel</button>
+            <button class="action-btn" onclick="commitProductForm()">Save Product Record</button>
+        </div>
+    </div>
+</div>
+
+<script src="script.js"></script>
+<script>
+    // ── Admin auth guard ──────────────────────────────────────
+    (function () {
+        const adminUser = sessionStorage.getItem('kegg_admin');
+        if (!adminUser) {
+            window.location.href = 'admin-login.html';
+        } else {
+            // Show admin name and role in topbar
+            const nameEl = document.querySelector('.user-name');
+            const roleEl = document.querySelector('.user-avatar');
+            const role   = sessionStorage.getItem('kegg_admin_role') || 'admin';
+            if (nameEl) nameEl.textContent = adminUser;
+            if (roleEl) roleEl.textContent = adminUser.charAt(0).toUpperCase();
+        }
+    })();
+
+    // ── Logout ────────────────────────────────────────────────
+    function adminLogout() {
+        sessionStorage.removeItem('kegg_admin');
+        sessionStorage.removeItem('kegg_admin_role');
+        sessionStorage.removeItem('kegg_admin_id');
+        window.location.href = 'admin-login.html';
+    }
+</script>
+</body>
+</html>

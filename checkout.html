@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Checkout - K-EGG</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+     <link rel="icon" type="image/x-icon" href="images/keggfavicon.png">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700;900&family=Passion+One:wght@700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body class="acc-body">
+
+    <header>
+        <nav class="container">
+            <div class="logo">
+                <img src="images/kegglogo.png" id="logoo">
+            </div>
+
+            <ul class="nav-links" id="navLinks">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="menu.html">Menu</a></li>
+                <li><a href="promos.html">Promos</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="gallery.html">Gallery</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+
+            <div class="promos-nav-icons">
+                <div class="acc-icon">
+                    <a href="login.html"><img src="images/acciconn.png"></a>
+                </div>
+                <div class="cart-icon">
+                    <a href="cart.html">🛒</a>
+                </div>
+                <button class="hamburger" id="hamburger" aria-label="Toggle menu">
+                    <span></span><span></span><span></span>
+                </button>
+            </div>
+        </nav>
+    </header>
+
+   <div class="co-header-banner">
+        <h1 class="co-banner-title">CHECKOUT / BILLING DETAILS</h1>
+    </div>
+
+    <div class="co-main-container">
+        <form id="checkoutForm" class="co-split-layout">
+            
+            <div class="co-left-panel">
+                <div class="co-form-card">
+                    <h2 class="co-section-title">Billing Details</h2>
+                    
+                    <div class="co-input-group">
+                        <label class="co-label">Full Name</label>
+                        <input type="text" class="co-field" placeholder="Enter your full name" required id="billName">
+                    </div>
+
+                    <div class="co-input-group">
+                        <label class="co-label">Mobile Number</label>
+                        <div class="co-phone-row">
+                            <select class="co-prefix-select">
+                                <option>+63</option>
+                            </select>
+                            <input type="tel" class="co-field" placeholder="9XX XXX XXXX" required id="billPhone">
+                        </div>
+                    </div>
+
+                    <div class="co-input-group">
+                        <label class="co-label">Email Address (Optional)</label>
+                        <input type="email" class="co-field" placeholder="username@email.com" id="billEmail">
+                    </div>
+
+                    <div class="co-input-group">
+                        <label class="co-label">Pick-up Schedule</label>
+                        <div class="co-schedule-row">
+                            <select class="co-select-field" id="pickDate" required>
+                                <option value="">Select Date</option>
+                            </select>
+                            <select class="co-select-field" id="pickTime" required>
+                                <option value="">Select Time</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <div class="co-input-group">
+                        <label class="co-label">Order Notes (Optional)</label>
+                        <textarea class="co-textarea-field" placeholder="Notes about your order, e.g. special instructions for food preparation." id="billNotes"></textarea>
+                    </div>
+                </div>
+
+                <div class="co-form-card">
+                    <h2 class="co-section-title">Mode of Payment</h2>
+                    
+                    <div class="co-radio-group">
+                        <div class="co-radio-row">
+                            <input type="radio" name="paymentMode" value="gcash" id="payGcash" class="co-radio" checked>
+                            <label for="payGcash" class="co-radio-label">
+                                <span class="co-bold-text">GCash</span> (E-Wallet)
+                            </label>
+                        </div>
+                        <div class="co-radio-row">
+                            <input type="radio" name="paymentMode" value="cash" id="payCash" class="co-radio">
+                            <label for="payCash" class="co-radio-label">
+                                <span class="co-bold-text">Cash</span> (Pay upon collection)
+                            </label>
+                        </div>
+                    </div>
+
+                    <div id="gcashDetailsBlock" class="co-gcash-box">
+                        <p class="co-gcash-instruction">Please send your payment to the GCash account below:</p>
+                        <div class="co-gcash-info-card">
+                            <p><strong>Account Name:</strong> K-EGG MAYSAN BR.</p>
+                            <p><strong>Account Number:</strong> 0917 123 4567</p>
+                        </div>
+                        <div class="co-input-group">
+                            <label class="co-label">Upload Receipt Screenshot</label>
+                            <input type="file" class="co-file-field" id="gcashReceipt">
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="co-right-panel">
+                <div class="co-summary-card">
+                    <div class="co-summary-circle">🛒</div>
+                    <h2 class="co-summary-title">YOUR ORDER</h2>
+                    
+                    <div id="checkoutItemsList" class="co-checkout-items"></div>
+                    
+                    <div class="co-receipt-row">
+                        <span>Subtotal</span>
+                        <span id="sumSubtotal">₱0</span>
+                    </div>
+                    <div class="co-receipt-row">
+                        <span>Delivery / Service</span>
+                        <span id="sumDelivery">₱50</span>
+                    </div>
+                    <div class="co-receipt-row">
+                        <span>Customization</span>
+                        <span id="sumCustom">₱15</span>
+                    </div>
+                    <div class="co-receipt-row">
+                        <span>Processing Fee</span>
+                        <span id="sumProcess">₱11</span>
+                    </div>
+                    
+                    <div class="co-receipt-divider"></div>
+                    
+                    <div class="co-receipt-total-row">
+                        <span>Total</span>
+                        <span id="sumGrandTotal">₱0</span>
+                    </div>
+
+                    <button type="submit" class="co-place-btn">PLACE ORDER NOW</button>
+                </div>
+            </div>
+
+        </form>
+    </div>
+
+     <footer>
+
+    <div class="footer-top">
+        <!-- LEFT -->
+        <div class="footer-column">
+        <div class="logo">
+            <img src="images/kegglogo.png" id="logoo" width="400px" height="299px">
+        </div>
+
+        <div class="tagline">
+            Korean-Style Egg Sandwiches<br>
+            Made Fresh Daily
+        </div>
+        </div>
+
+        <!-- HOURS -->
+        <div class="footer-column hours">
+        <h3>Hours</h3>
+
+        <p>
+          <strong>  Mon - Fri<br> </strong>
+            7 AM - 6PM<br>
+           <strong> Sat - Sun<br></strong>
+            8 AM - 10 PM
+        </p>
+        </div>
+
+        <!-- QUICK LINKS -->
+        <div class="footer-column links">
+        <h3>Quick Links</h3>
+
+        <a href="index.html">Home</a>
+        <a href="menu.html">Our Menu</a>
+        <a href="about.html">About Us</a>
+        <a href="contact.html">Contact Us</a>
+        </div>
+
+        <!-- FOLLOW US -->
+        <div class="footer-column">
+        <h3>Follow Us</h3>
+
+        <div class="socials">
+            <a href="https://web.facebook.com/profile.php?id=61573550045511"><img src="images/facebook-new.png" alt=""></a>
+            <a href="#"><img src="images/instagram-new.png" alt=""></a>
+            <a href="#"><img src="https://img.icons8.com/ios-filled/50/000000/tiktok.png" alt="TikTok"></a>
+        </div>
+
+        <div class="foodpanda">
+            <div class="panda">
+                <img src="images/foodpanda.png" alt="" height="115" width="115">
+            </div>
+
+            <div class="foodpanda-text">
+            ALSO AVAILABLE AT<br>
+            FOOD PANDA!
+            </div>
+        </div>
+        </div>
+    </div>
+     <!-- BOTTOM -->
+    <div class="footer-bottom">
+
+      <h3><a href="terms.html" style="color:#888;text-decoration:none;">Terms and Conditions</a> | <a href="privacy.html" style="color:#888;text-decoration:none;">Privacy Policy</a></h3>
+
+      <div class="copyright">
+        © 2026 K-Egg. All Rights Reserved. &nbsp;·&nbsp; <a href="credits.html" style="color:#888;text-decoration:none;">Credits</a>
+      </div>
+
+    </div>
+
+  </footer>
+    <script src="script.js"></script>
+</body>
+</html>

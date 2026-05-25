@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>K-Egg | Cart / Receipt</title>
+    <link rel="stylesheet" href="style.css">
+     <link rel="icon" type="image/x-icon" href="images/keggfavicon.png">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700;900&family=Passion+One:wght@700&display=swap" rel="stylesheet">
+</head>
+<body>
+
+    <header>
+        <nav class="container">
+            <div class="logo">
+                <img src="images/kegglogo.png" id="logoo">
+            </div>
+
+            <ul class="nav-links" id="navLinks">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="menu.html">Menu</a></li>
+                <li><a href="promos.html">Promos</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="gallery.html">Gallery</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+
+            <div class="promos-nav-icons">
+                <div class="acc-icon">
+                    <a href="login.html"><img src="images/acciconn.png"></a>
+                </div>
+                <div class="cart-icon">
+                    <a href="cart.html">🛒</a>
+                </div>
+                <button class="hamburger" id="hamburger" aria-label="Toggle menu">
+                    <span></span><span></span><span></span>
+                </button>
+            </div>
+        </nav>
+    </header>
+
+    <div class="page-title-banner">
+        <h1>CART / RECEIPT</h1>
+    </div>
+
+    <div class="main-layout">
+        
+        <div class="left-section">
+            <div class="cart-box">
+                <div class="cart-header">
+                    <h3>Review Items In Your Cart</h3>
+                    <button class="update-cart-btn" onclick="updateCartQuantities()">Update Quantities</button>
+                </div>
+                <div id="cart-items-list">
+                </div>
+            </div>
+        </div>
+
+        <div class="right-section">
+            <div class="receipt-card">
+                <div class="receipt-header">
+                    <h2>K-EGG</h2>
+                    <p>Order Receipt Summary</p>
+                </div>
+                
+                <div class="receipt-body">
+                    <div class="receipt-row">
+                        <span>Subtotal Price</span>
+                        <span id="summary-subtotal" class="bold-text">₱0</span>
+                    </div>
+                    <div class="receipt-row">
+                        <span>Delivery Fee</span>
+                        <span id="summary-delivery">₱0</span>
+                    </div>
+                    <div class="receipt-row">
+                        <span>Customization Pack</span>
+                        <span id="summary-customization">₱0</span>
+                    </div>
+                    <div class="receipt-row">
+                        <span>System Processing</span>
+                        <span id="summary-processing">₱0</span>
+                    </div>
+                    <hr class="receipt-divider">
+                    <div class="receipt-row total-row">
+                        <span>Calculated Total</span>
+                        <span id="summary-calculated-total" class="bold-text text-large">₱0</span>
+                    </div>
+                </div>
+
+                <div class="receipt-footer">
+                    <div class="grand-total-section">
+                        <span class="label">GRAND TOTAL</span>
+                        <span id="summary-grand-total" class="value">₱0</span>
+                    </div>
+                    <button class="checkout-btn" onclick="window.location.href='checkout.html'">PROCEED TO CHECKOUT</button>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+    <footer>
+    <div class="footer-top">
+        <div class="footer-column">
+        <div class="logo">
+            <img src="images/kegglogo.png" id="logoo" width="400px" height="299px">
+        </div>
+
+        <div class="tagline">
+            Korean-Style Egg Sandwiches<br>
+            Made Fresh Daily
+        </div>
+        </div>
+
+        <div class="footer-column hours">
+        <h3>Hours</h3>
+
+        <p>
+          <strong>  Mon - Fri<br> </strong>
+            7 AM - 6PM<br>
+           <strong> Sat - Sun<br></strong>
+            8 AM - 10 PM
+        </p>
+        </div>
+
+        <div class="footer-column links">
+        <h3>Quick Links</h3>
+
+        <a href="index.html">Home</a>
+        <a href="menu.html">Our Menu</a>
+        <a href="about.html">About Us</a>
+        <a href="contact.html">Contact Us</a>
+        </div>
+
+        <div class="footer-column">
+        <h3>Follow Us</h3>
+
+        <div class="socials">
+            <a href="https://web.facebook.com/profile.php?id=61573550045511"><img src="images/facebook-new.png" alt=""></a>
+            <a href="#"><img src="images/instagram-new.png" alt=""></a>
+            <a href="#"><img src="https://img.icons8.com/ios-filled/50/000000/tiktok.png" alt="TikTok"></a>
+        </div>
+
+        <div class="foodpanda">
+            <div class="panda">
+                <img src="images/foodpanda.png" alt="" height="115" width="115">
+            </div>
+
+            <div class="foodpanda-text">
+            ALSO AVAILABLE AT<br>
+            FOOD PANDA!
+            </div>
+        </div>
+        </div>
+    </div>
+    <div class="footer-bottom">
+
+      <h3><a href="terms.html" style="color:#888;text-decoration:none;">Terms and Conditions</a> | <a href="privacy.html" style="color:#888;text-decoration:none;">Privacy Policy</a></h3>
+
+      <div class="copyright">
+        © 2026 K-Egg. All Rights Reserved. &nbsp;·&nbsp; <a href="credits.html" style="color:#888;text-decoration:none;">Credits</a>
+      </div>
+
+    </div>
+
+  </footer>
+<button id="orderBtn">Test Order Connection</button>
+
+<script>
+  const API_BASE = "https://k-eggstore.online/api";
+
+  document.getElementById('orderBtn').addEventListener('click', async () => {
+      const orderData = {
+          item: "Fluffy Egg Toast",
+          quantity: 1,
+          price: 150
+      };
+
+      try {
+          // Sending the data to your Node.js backend server
+          const response = await fetch(`${API_BASE}/api/orders`, {
+              method: 'POST',
+              headers: {
+                  'Content-Type': 'application/json'
+              },
+              body: JSON.stringify(orderData)
+          });
+
+          const result = await response.json();
+          if (result.success) {
+              alert("Success! Check your backend terminal log.");
+          }
+      } catch (error) {
+          console.error("Error connecting to backend:", error);
+          alert("Could not reach the server.");
+      }
+  });
+</script>
+<script src="script.js"></script>
+</body>
+</html>

@@ -1,0 +1,102 @@
+[{
+  "_id": {
+    "$oid": "6a0c8a76e26ff2e73c71f59e"
+  },
+  "title": "Meryenda Bundle!",
+  "description": "Buy any K-Egg Sandwich and add ₱10 for a Large Milk Tea!",
+  "imagePath": "images/b10promo.jpg",
+  "validUntil": "March 31, 2026",
+  "isActive": true,
+  "__v": 0,
+  "createdAt": {
+    "$date": "2026-05-19T16:06:14.760Z"
+  },
+  "updatedAt": {
+    "$date": "2026-05-19T16:06:14.760Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "6a0c8a76e26ff2e73c71f59f"
+  },
+  "title": "Two Stacks, One Stronger Reason",
+  "description": "Buy 1 K-Egg Sandwich, Get the 2nd for 50% Off!",
+  "imagePath": "images/buy1g50.jpg",
+  "validUntil": "June 15, 2026",
+  "isActive": true,
+  "__v": 0,
+  "createdAt": {
+    "$date": "2026-05-19T16:06:14.760Z"
+  },
+  "updatedAt": {
+    "$date": "2026-05-19T16:06:14.760Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "6a0c8a76e26ff2e73c71f5a0"
+  },
+  "title": "Budget Meal Promo",
+  "description": "Petsa de peligro? Student on a budget? Don't worry, we got you covered!",
+  "imagePath": "images/bmp.jpg",
+  "validUntil": "No Limit",
+  "isActive": true,
+  "__v": 0,
+  "createdAt": {
+    "$date": "2026-05-19T16:06:14.760Z"
+  },
+  "updatedAt": {
+    "$date": "2026-05-19T16:06:14.760Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "6a0c8a76e26ff2e73c71f5a1"
+  },
+  "title": "Valentines Day Promo",
+  "description": "FREE Iced Coffee of your choice for every purchase of our egg drop sandwich, any flavor!",
+  "imagePath": "images/vdaypromo.jpg",
+  "validUntil": "February 14, 2026",
+  "isActive": false,
+  "__v": 0,
+  "createdAt": {
+    "$date": "2026-05-19T16:06:14.760Z"
+  },
+  "updatedAt": {
+    "$date": "2026-05-19T16:06:14.760Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "6a0c8a76e26ff2e73c71f5a2"
+  },
+  "title": "Father's Day Promo",
+  "description": "Buy 1 K-Egg Sandwich, Get the 2nd at 50% Off!",
+  "imagePath": "images/fdaypromo.jpg",
+  "validUntil": "June 15, 2026",
+  "isActive": true,
+  "__v": 0,
+  "createdAt": {
+    "$date": "2026-05-19T16:06:14.760Z"
+  },
+  "updatedAt": {
+    "$date": "2026-05-19T16:06:14.760Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "6a0c8a76e26ff2e73c71f5a3"
+  },
+  "title": "Flash Sale Every Friday!",
+  "description": "Get 25% OFF on all menu items every Friday from 3pm - 6pm.",
+  "imagePath": "images/limitednote.png",
+  "validUntil": "Every Friday",
+  "isActive": true,
+  "__v": 0,
+  "createdAt": {
+    "$date": "2026-05-19T16:06:14.760Z"
+  },
+  "updatedAt": {
+    "$date": "2026-05-19T16:06:14.760Z"
+  }
+}]

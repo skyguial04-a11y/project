@@ -1,0 +1,22 @@
+[{
+  "_id": {
+    "$oid": "6a0c8a76e26ff2e73c71f59d"
+  },
+  "storeName": "K-Egg Maysan",
+  "contactNumber": "0954 269 8006",
+  "email": "keggmaysanvalenzuela24@gmail.com",
+  "address": "1665 R Funaki Bldg, Maysan Rd, Valenzuela, Metro Manila",
+  "operatingHours": "Mon-Fri 7AM-6PM, Sat-Sun 8AM-10PM",
+  "gcashName": "K-EGG MAYSAN BR.",
+  "gcashNumber": "0926 931 8611",
+  "deliveryFee": 0,
+  "customizationFee": 15,
+  "processingFee": 11,
+  "createdAt": {
+    "$date": "2026-05-19T16:06:14.749Z"
+  },
+  "updatedAt": {
+    "$date": "2026-05-19T16:06:14.749Z"
+  },
+  "__v": 0
+}]

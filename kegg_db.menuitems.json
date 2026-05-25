@@ -1,0 +1,756 @@
+[{
+  "_id": {
+    "$oid": "6a0c8a76e26ff2e73c71f579"
+  },
+  "name": "Bacon Rice Bowl",
+  "category": "rice bowls",
+  "description": "Savory bacon strips with rice",
+  "price": 119,
+  "stock": 50,
+  "imagePath": "images/baconricebowl.jpg",
+  "status": "available",
+  "orderCount": 0,
+  "variations": [],
+  "__v": 0,
+  "createdAt": {
+    "$date": "2026-05-19T16:06:14.724Z"
+  },
+  "updatedAt": {
+    "$date": "2026-05-19T16:06:14.724Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "6a0c8a76e26ff2e73c71f57a"
+  },
+  "name": "Spam Rice Bowl",
+  "category": "rice bowls",
+  "description": "Sliced spam served with rice",
+  "price": 119,
+  "stock": 50,
+  "imagePath": "images/spamricebowl.jpg",
+  "status": "available",
+  "orderCount": 0,
+  "variations": [],
+  "__v": 0,
+  "createdAt": {
+    "$date": "2026-05-19T16:06:14.724Z"
+  },
+  "updatedAt": {
+    "$date": "2026-05-19T16:06:14.724Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "6a0c8a76e26ff2e73c71f57b"
+  },
+  "name": "Ham Rice Bowl",
+  "category": "rice bowls",
+  "description": "Tender ham atop steamed rice",
+  "price": 119,
+  "stock": 50,
+  "imagePath": "images/hamricebowl.jpg",
+  "status": "available",
+  "orderCount": 0,
+  "variations": [],
+  "__v": 0,
+  "createdAt": {
+    "$date": "2026-05-19T16:06:14.724Z"
+  },
+  "updatedAt": {
+    "$date": "2026-05-19T16:06:14.724Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "6a0c8a76e26ff2e73c71f57c"
+  },
+  "name": "Beef Bulgogi Rice Bowl",
+  "category": "rice bowls",
+  "description": "Sweet savory beef over rice",
+  "price": 149,
+  "stock": 50,
+  "imagePath": "images/beefbulgogirice.jpg",
+  "status": "available",
+  "orderCount": 0,
+  "variations": [],
+  "__v": 0,
+  "createdAt": {
+    "$date": "2026-05-19T16:06:14.724Z"
+  },
+  "updatedAt": {
+    "$date": "2026-05-19T16:06:14.724Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "6a0c8a76e26ff2e73c71f57d"
+  },
+  "name": "Spicy Beef Bulgogi Rice Bowl",
+  "category": "rice bowls",
+  "description": "Fiery marinated beef with rice",
+  "price": 149,
+  "stock": 50,
+  "imagePath": "images/spicybeeffrice.jpg",
+  "status": "available",
+  "orderCount": 0,
+  "variations": [],
+  "__v": 0,
+  "createdAt": {
+    "$date": "2026-05-19T16:06:14.724Z"
+  },
+  "updatedAt": {
+    "$date": "2026-05-19T16:06:14.724Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "6a0c8a76e26ff2e73c71f57e"
+  },
+  "name": "Pork Bulgogi Rice Bowl",
+  "category": "rice bowls",
+  "description": "Traditional marinated pork over rice",
+  "price": 149,
+  "stock": 50,
+  "imagePath": "images/porkbulgogirice.jpg",
+  "status": "available",
+  "orderCount": 0,
+  "variations": [],
+  "__v": 0,
+  "createdAt": {
+    "$date": "2026-05-19T16:06:14.725Z"
+  },
+  "updatedAt": {
+    "$date": "2026-05-19T16:06:14.725Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "6a0c8a76e26ff2e73c71f57f"
+  },
+  "name": "Spicy Pork Bulgogi Rice Bowl",
+  "category": "rice bowls",
+  "description": "Bold spicy pork with rice",
+  "price": 149,
+  "stock": 50,
+  "imagePath": "images/spicyporkrice.jpg",
+  "status": "available",
+  "orderCount": 0,
+  "variations": [],
+  "__v": 0,
+  "createdAt": {
+    "$date": "2026-05-19T16:06:14.725Z"
+  },
+  "updatedAt": {
+    "$date": "2026-05-19T16:06:14.725Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "6a0c8a76e26ff2e73c71f580"
+  },
+  "name": "Fries",
+  "category": "sides",
+  "description": "French fries with different flavors",
+  "price": 89,
+  "stock": 50,
+  "imagePath": "images/fries.jpg",
+  "status": "available",
+  "orderCount": 0,
+  "variations": [],
+  "__v": 0,
+  "createdAt": {
+    "$date": "2026-05-19T16:06:14.725Z"
+  },
+  "updatedAt": {
+    "$date": "2026-05-19T16:06:14.725Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "6a0c8a76e26ff2e73c71f581"
+  },
+  "name": "Classic Corndog",
+  "category": "sides",
+  "description": "Simple golden battered fried sausage",
+  "price": 119,
+  "stock": 50,
+  "imagePath": "images/4 Ramyeon Corndogs.jpg",
+  "status": "available",
+  "orderCount": 0,
+  "variations": [],
+  "__v": 0,
+  "createdAt": {
+    "$date": "2026-05-19T16:06:14.725Z"
+  },
+  "updatedAt": {
+    "$date": "2026-05-19T16:06:14.725Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "6a0c8a76e26ff2e73c71f582"
+  },
+  "name": "Ramyeon Corndog",
+  "category": "sides",
+  "description": "Crunchy, ramen-coated golden fried sausage",
+  "price": 129,
+  "stock": 50,
+  "imagePath": "images/4 Ramyeon Corndogs.jpg",
+  "status": "available",
+  "orderCount": 0,
+  "variations": [],
+  "__v": 0,
+  "createdAt": {
+    "$date": "2026-05-19T16:06:14.725Z"
+  },
+  "updatedAt": {
+    "$date": "2026-05-19T16:06:14.725Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "6a0c8a76e26ff2e73c71f583"
+  },
+  "name": "Potato Corndog",
+  "category": "sides",
+  "description": "Crispy potato coated sausage",
+  "price": 129,
+  "stock": 50,
+  "imagePath": "images/fries.jpg",
+  "status": "available",
+  "orderCount": 0,
+  "variations": [],
+  "__v": 0,
+  "createdAt": {
+    "$date": "2026-05-19T16:06:14.725Z"
+  },
+  "updatedAt": {
+    "$date": "2026-05-19T16:06:14.725Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "6a0c8a76e26ff2e73c71f584"
+  },
+  "name": "Mozzadog",
+  "category": "sides",
+  "description": "Half mozzarella half sausage stick",
+  "price": 139,
+  "stock": 50,
+  "imagePath": "images/chicken.jpg",
+  "status": "available",
+  "orderCount": 0,
+  "variations": [],
+  "__v": 0,
+  "createdAt": {
+    "$date": "2026-05-19T16:06:14.725Z"
+  },
+  "updatedAt": {
+    "$date": "2026-05-19T16:06:14.725Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "6a0c8a76e26ff2e73c71f585"
+  },
+  "name": "Mozzaspam Corndog",
+  "category": "sides",
+  "description": "Fried mozzarella and spam stick",
+  "price": 149,
+  "stock": 50,
+  "imagePath": "images/3 Spam Sandwhich.jpg",
+  "status": "available",
+  "orderCount": 0,
+  "variations": [],
+  "__v": 0,
+  "createdAt": {
+    "$date": "2026-05-19T16:06:14.725Z"
+  },
+  "updatedAt": {
+    "$date": "2026-05-19T16:06:14.725Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "6a0c8a76e26ff2e73c71f586"
+  },
+  "name": "Ramen",
+  "category": "ramen",
+  "description": "Hot ramen with authentic taste",
+  "price": 169,
+  "stock": 50,
+  "imagePath": "images/ramen.jpg",
+  "status": "available",
+  "orderCount": 0,
+  "variations": [],
+  "__v": 0,
+  "createdAt": {
+    "$date": "2026-05-19T16:06:14.725Z"
+  },
+  "updatedAt": {
+    "$date": "2026-05-19T16:06:14.725Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "6a0c8a76e26ff2e73c71f587"
+  },
+  "name": "Classic Toast Sandwich",
+  "category": "sandwiches",
+  "description": "Fluffy egg sandwich",
+  "price": 109,
+  "stock": 50,
+  "imagePath": "images/egg sandwich.jpg",
+  "status": "available",
+  "orderCount": 0,
+  "variations": [],
+  "__v": 0,
+  "createdAt": {
+    "$date": "2026-05-19T16:06:14.725Z"
+  },
+  "updatedAt": {
+    "$date": "2026-05-19T16:06:14.725Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "6a0c8a76e26ff2e73c71f588"
+  },
+  "name": "Chicken Pesto Sandwich",
+  "category": "sandwiches",
+  "description": "Herbaceous chicken and egg fusion",
+  "price": 159,
+  "stock": 50,
+  "imagePath": "images/3 Pork Bulgogi Sandwich.jpg",
+  "status": "available",
+  "orderCount": 0,
+  "variations": [],
+  "__v": 0,
+  "createdAt": {
+    "$date": "2026-05-19T16:06:14.725Z"
+  },
+  "updatedAt": {
+    "$date": "2026-05-19T16:06:14.725Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "6a0c8a76e26ff2e73c71f589"
+  },
+  "name": "Ham Sandwich",
+  "category": "sandwiches",
+  "description": "Savory ham, fluffy egg brioche",
+  "price": 149,
+  "stock": 50,
+  "imagePath": "images/egg sandwich.jpg",
+  "status": "available",
+  "orderCount": 0,
+  "variations": [],
+  "__v": 0,
+  "createdAt": {
+    "$date": "2026-05-19T16:06:14.725Z"
+  },
+  "updatedAt": {
+    "$date": "2026-05-19T16:06:14.725Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "6a0c8a76e26ff2e73c71f58a"
+  },
+  "name": "Bacon Sandwich",
+  "category": "sandwiches",
+  "description": "Smoky bacon with creamy eggs",
+  "price": 149,
+  "stock": 50,
+  "imagePath": "images/baconricebowl.jpg",
+  "status": "available",
+  "orderCount": 0,
+  "variations": [],
+  "__v": 0,
+  "createdAt": {
+    "$date": "2026-05-19T16:06:14.725Z"
+  },
+  "updatedAt": {
+    "$date": "2026-05-19T16:06:14.725Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "6a0c8a76e26ff2e73c71f58b"
+  },
+  "name": "Beef Bulgogi Sandwich",
+  "category": "sandwiches",
+  "description": "Sweet, savory Korean beef bulgogi",
+  "price": 169,
+  "stock": 50,
+  "imagePath": "images/3 Spicy Beef Bulgogi Sandwich.jpg",
+  "status": "available",
+  "orderCount": 0,
+  "variations": [],
+  "__v": 0,
+  "createdAt": {
+    "$date": "2026-05-19T16:06:14.725Z"
+  },
+  "updatedAt": {
+    "$date": "2026-05-19T16:06:14.725Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "6a0c8a76e26ff2e73c71f58c"
+  },
+  "name": "Spicy Beef Bulgogi Sandwich",
+  "category": "sandwiches",
+  "description": "Fiery, marinated Korean beef bulgogi",
+  "price": 169,
+  "stock": 50,
+  "imagePath": "images/3 Spicy Beef Bulgogi Sandwich.jpg",
+  "status": "available",
+  "orderCount": 0,
+  "variations": [],
+  "__v": 0,
+  "createdAt": {
+    "$date": "2026-05-19T16:06:14.725Z"
+  },
+  "updatedAt": {
+    "$date": "2026-05-19T16:06:14.725Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "6a0c8a76e26ff2e73c71f58d"
+  },
+  "name": "Pork Bulgogi Sandwich",
+  "category": "sandwiches",
+  "description": "Traditional, tender pork bulgogi flavors",
+  "price": 159,
+  "stock": 50,
+  "imagePath": "images/3 Pork Bulgogi Sandwich.jpg",
+  "status": "available",
+  "orderCount": 0,
+  "variations": [],
+  "__v": 0,
+  "createdAt": {
+    "$date": "2026-05-19T16:06:14.726Z"
+  },
+  "updatedAt": {
+    "$date": "2026-05-19T16:06:14.726Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "6a0c8a76e26ff2e73c71f58e"
+  },
+  "name": "Spicy Pork Bulgogi Sandwich",
+  "category": "sandwiches",
+  "description": "Bold, fiery pork bulgogi kick",
+  "price": 159,
+  "stock": 50,
+  "imagePath": "images/3 Spicy Pork Bulgogi Sandwich.jpg",
+  "status": "available",
+  "orderCount": 0,
+  "variations": [],
+  "__v": 0,
+  "createdAt": {
+    "$date": "2026-05-19T16:06:14.726Z"
+  },
+  "updatedAt": {
+    "$date": "2026-05-19T16:06:14.726Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "6a0c8a76e26ff2e73c71f58f"
+  },
+  "name": "Chicken Katsu Sandwich",
+  "category": "sandwiches",
+  "description": "Crispy chicken cutlet with eggs",
+  "price": 159,
+  "stock": 50,
+  "imagePath": "images/chicken.jpg",
+  "status": "available",
+  "orderCount": 0,
+  "variations": [],
+  "__v": 0,
+  "createdAt": {
+    "$date": "2026-05-19T16:06:14.726Z"
+  },
+  "updatedAt": {
+    "$date": "2026-05-19T16:06:14.726Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "6a0c8a76e26ff2e73c71f590"
+  },
+  "name": "Hot Coffee",
+  "category": "drinks",
+  "description": "Hot coffee perfect for cold weather",
+  "price": 88,
+  "stock": 50,
+  "imagePath": "images/hotcoffee.jpg",
+  "status": "available",
+  "orderCount": 0,
+  "variations": [],
+  "__v": 0,
+  "createdAt": {
+    "$date": "2026-05-19T16:06:14.726Z"
+  },
+  "updatedAt": {
+    "$date": "2026-05-19T16:06:14.726Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "6a0c8a76e26ff2e73c71f591"
+  },
+  "name": "Fruity Drinks",
+  "category": "drinks",
+  "description": "Fruity drinks to ease the thirst",
+  "price": 78,
+  "stock": 50,
+  "imagePath": "images/drinks.jpg",
+  "status": "available",
+  "orderCount": 0,
+  "variations": [],
+  "__v": 0,
+  "createdAt": {
+    "$date": "2026-05-19T16:06:14.726Z"
+  },
+  "updatedAt": {
+    "$date": "2026-05-19T16:06:14.726Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "6a0c8a76e26ff2e73c71f592"
+  },
+  "name": "Iced Caramel Macchiato",
+  "category": "drinks",
+  "description": "Espresso, milk, and sweet caramel",
+  "price": 88,
+  "stock": 50,
+  "imagePath": "images/carmacc.jpg",
+  "status": "available",
+  "orderCount": 0,
+  "variations": [],
+  "__v": 0,
+  "createdAt": {
+    "$date": "2026-05-19T16:06:14.726Z"
+  },
+  "updatedAt": {
+    "$date": "2026-05-19T16:06:14.726Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "6a0c8a76e26ff2e73c71f593"
+  },
+  "name": "Cafe Mocha",
+  "category": "drinks",
+  "description": "Rich chocolate meets espresso coffee",
+  "price": 88,
+  "stock": 50,
+  "imagePath": "images/cafemocha.jpg",
+  "status": "available",
+  "orderCount": 0,
+  "variations": [],
+  "__v": 0,
+  "createdAt": {
+    "$date": "2026-05-19T16:06:14.726Z"
+  },
+  "updatedAt": {
+    "$date": "2026-05-19T16:06:14.726Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "6a0c8a76e26ff2e73c71f594"
+  },
+  "name": "Iced Chocolate",
+  "category": "drinks",
+  "description": "Rich, creamy, chilled cocoa delight",
+  "price": 88,
+  "stock": 50,
+  "imagePath": "images/chocolate.jpg",
+  "status": "available",
+  "orderCount": 0,
+  "variations": [],
+  "__v": 0,
+  "createdAt": {
+    "$date": "2026-05-19T16:06:14.726Z"
+  },
+  "updatedAt": {
+    "$date": "2026-05-19T16:06:14.726Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "6a0c8a76e26ff2e73c71f595"
+  },
+  "name": "Matcha Latte",
+  "category": "drinks",
+  "description": "Earthy green tea, creamy milk",
+  "price": 88,
+  "stock": 50,
+  "imagePath": "images/matchalatte.jpg",
+  "status": "available",
+  "orderCount": 0,
+  "variations": [],
+  "__v": 0,
+  "createdAt": {
+    "$date": "2026-05-19T16:06:14.726Z"
+  },
+  "updatedAt": {
+    "$date": "2026-05-19T16:06:14.726Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "6a0c8a76e26ff2e73c71f596"
+  },
+  "name": "French Vanilla",
+  "category": "drinks",
+  "description": "Smooth, creamy, classic vanilla bean",
+  "price": 88,
+  "stock": 50,
+  "imagePath": "images/frenchvan.jpg",
+  "status": "unavailable",
+  "orderCount": 0,
+  "variations": [],
+  "__v": 0,
+  "createdAt": {
+    "$date": "2026-05-19T16:06:14.726Z"
+  },
+  "updatedAt": {
+    "$date": "2026-05-24T09:18:05.797Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "6a0c8a76e26ff2e73c71f597"
+  },
+  "name": "Hazelnut Latte",
+  "category": "drinks",
+  "description": "Nutty, aromatic coffee milk blend",
+  "price": 88,
+  "stock": 50,
+  "imagePath": "images/haznutlatte.jpg",
+  "status": "available",
+  "orderCount": 0,
+  "variations": [],
+  "__v": 0,
+  "createdAt": {
+    "$date": "2026-05-19T16:06:14.726Z"
+  },
+  "updatedAt": {
+    "$date": "2026-05-19T16:06:14.726Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "6a0c8a76e26ff2e73c71f598"
+  },
+  "name": "Cookies n' Cream Frappe",
+  "category": "drinks",
+  "description": "Sweet, cookies, and cream frappe",
+  "price": 108,
+  "stock": 50,
+  "imagePath": "images/cncfrappe.jpg",
+  "status": "available",
+  "orderCount": 0,
+  "variations": [],
+  "__v": 0,
+  "createdAt": {
+    "$date": "2026-05-19T16:06:14.726Z"
+  },
+  "updatedAt": {
+    "$date": "2026-05-19T16:06:14.726Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "6a0c8a76e26ff2e73c71f599"
+  },
+  "name": "Ube Frappe",
+  "category": "drinks",
+  "description": "Sweet, purple yam blended ice",
+  "price": 108,
+  "stock": 50,
+  "imagePath": "images/ubefrap.jpg",
+  "status": "available",
+  "orderCount": 0,
+  "variations": [],
+  "__v": 0,
+  "createdAt": {
+    "$date": "2026-05-19T16:06:14.726Z"
+  },
+  "updatedAt": {
+    "$date": "2026-05-19T16:06:14.726Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "6a0c8a76e26ff2e73c71f59a"
+  },
+  "name": "Salted Caramel Frappe",
+  "category": "drinks",
+  "description": "Sweet, salty, blended coffee treat",
+  "price": 118,
+  "stock": 50,
+  "imagePath": "images/salcarfrappe.jpg",
+  "status": "available",
+  "orderCount": 0,
+  "variations": [],
+  "__v": 0,
+  "createdAt": {
+    "$date": "2026-05-19T16:06:14.726Z"
+  },
+  "updatedAt": {
+    "$date": "2026-05-19T16:06:14.726Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "6a0c8a76e26ff2e73c71f59b"
+  },
+  "name": "Dark Choco Frappe",
+  "category": "drinks",
+  "description": "Intense, rich, blended chocolate ice",
+  "price": 118,
+  "stock": 50,
+  "imagePath": "images/dcfrappe.jpg",
+  "status": "available",
+  "orderCount": 0,
+  "variations": [],
+  "__v": 0,
+  "createdAt": {
+    "$date": "2026-05-19T16:06:14.726Z"
+  },
+  "updatedAt": {
+    "$date": "2026-05-19T16:06:14.726Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "6a0c8a76e26ff2e73c71f59c"
+  },
+  "name": "Java Chips Frappe",
+  "category": "drinks",
+  "description": "Coffee blend with chocolate bits",
+  "price": 118,
+  "stock": 50,
+  "imagePath": "images/javachip.jpg",
+  "status": "available",
+  "orderCount": 0,
+  "variations": [],
+  "__v": 0,
+  "createdAt": {
+    "$date": "2026-05-19T16:06:14.726Z"
+  },
+  "updatedAt": {
+    "$date": "2026-05-19T16:06:14.726Z"
+  }
+}]

@@ -1,0 +1,256 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>K-Egg | Admin Login</title>
+    <link rel="icon" type="image/x-icon" href="images/keggfavicon.png">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700;900&family=Passion+One:wght@700&display=swap" rel="stylesheet">
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+
+        body {
+            font-family: 'Montserrat', sans-serif;
+            background: #111;
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 20px;
+        }
+
+        .login-card {
+            background: #1a1a1a;
+            border-radius: 20px;
+            padding: 50px 45px;
+            width: 100%;
+            max-width: 420px;
+            box-shadow: 0 20px 60px rgba(0,0,0,0.5);
+            border: 1px solid #2a2a2a;
+        }
+
+        .login-logo {
+            text-align: center;
+            margin-bottom: 35px;
+        }
+
+        .login-logo h1 {
+            font-family: 'Passion One', cursive;
+            font-size: 3rem;
+            color: #FAD325;
+            letter-spacing: 2px;
+            line-height: 1;
+        }
+
+        .login-logo p {
+            font-size: 0.75rem;
+            color: #666;
+            letter-spacing: 3px;
+            text-transform: uppercase;
+            margin-top: 6px;
+        }
+
+        .login-title {
+            font-size: 1.1rem;
+            font-weight: 700;
+            color: #fff;
+            margin-bottom: 6px;
+        }
+
+        .login-sub {
+            font-size: 0.82rem;
+            color: #555;
+            margin-bottom: 30px;
+        }
+
+        .field-group {
+            margin-bottom: 20px;
+        }
+
+        .field-group label {
+            display: block;
+            font-size: 0.78rem;
+            font-weight: 700;
+            color: #888;
+            margin-bottom: 8px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .field-group input {
+            width: 100%;
+            background: #222;
+            border: 1.5px solid #333;
+            border-radius: 10px;
+            padding: 14px 16px;
+            font-family: 'Montserrat', sans-serif;
+            font-size: 0.9rem;
+            color: #fff;
+            outline: none;
+            transition: border-color 0.2s;
+        }
+
+        .field-group input:focus {
+            border-color: #FAD325;
+            box-shadow: 0 0 0 3px rgba(250,211,37,0.1);
+        }
+
+        .pass-wrap {
+            position: relative;
+        }
+
+        .pass-toggle {
+            position: absolute;
+            right: 14px;
+            top: 50%;
+            transform: translateY(-50%);
+            cursor: pointer;
+            color: #555;
+            user-select: none;
+            font-size: 1rem;
+        }
+
+        .error-msg {
+            background: rgba(201,42,42,0.15);
+            border: 1px solid #c92a2a;
+            border-radius: 8px;
+            padding: 10px 14px;
+            font-size: 0.82rem;
+            color: #ff6b6b;
+            margin-bottom: 18px;
+            display: none;
+        }
+
+        .login-btn {
+            width: 100%;
+            background: #FAD325;
+            border: none;
+            border-radius: 12px;
+            padding: 16px;
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 900;
+            font-size: 0.95rem;
+            color: #000;
+            cursor: pointer;
+            transition: background 0.2s, transform 0.2s;
+            margin-top: 8px;
+        }
+
+        .login-btn:hover  { background: #f0c000; transform: translateY(-1px); }
+        .login-btn:active { transform: scale(0.99); }
+        .login-btn:disabled { opacity: 0.6; cursor: not-allowed; transform: none; }
+
+        .back-link {
+            text-align: center;
+            margin-top: 24px;
+        }
+
+        .back-link a {
+            font-size: 0.82rem;
+            color: #555;
+            text-decoration: none;
+            transition: color 0.2s;
+        }
+
+        .back-link a:hover { color: #FAD325; }
+
+        @media (max-width: 425px) {
+            .login-card { padding: 35px 25px; }
+            .login-logo h1 { font-size: 2.5rem; }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="login-card">
+        <div class="login-logo">
+            <h1>K-EGG</h1>
+            <p>Admin Portal</p>
+        </div>
+
+        <h2 class="login-title">Welcome back</h2>
+        <p class="login-sub">Sign in to access the management panel</p>
+
+        <div class="error-msg" id="errorMsg"></div>
+
+        <form id="adminLoginForm">
+            <div class="field-group">
+                <label for="adminUser">Username</label>
+                <input type="text" id="adminUser" placeholder="Enter admin username" required autocomplete="username">
+            </div>
+
+            <div class="field-group">
+                <label for="adminPass">Password</label>
+                <div class="pass-wrap">
+                    <input type="password" id="adminPass" placeholder="Enter password" required autocomplete="current-password">
+                    <span class="pass-toggle" id="passToggle">👁️</span>
+                </div>
+            </div>
+
+            <button type="submit" class="login-btn" id="loginBtn">Sign In →</button>
+        </form>
+
+        <div class="back-link">
+            <a href="index.html">← Back to storefront</a>
+        </div>
+    </div>
+
+    <script>
+        const API_BASE = "https://k-eggstore.online/api";
+
+        // Password toggle
+        document.getElementById('passToggle').addEventListener('click', function () {
+            const input = document.getElementById('adminPass');
+            const isHidden = input.type === 'password';
+            input.type   = isHidden ? 'text' : 'password';
+            this.innerText = isHidden ? '🔒' : '👁️';
+        });
+
+        // Login form
+        document.getElementById('adminLoginForm').addEventListener('submit', async function (e) {
+            e.preventDefault();
+
+            const username = document.getElementById('adminUser').value.trim();
+            const password = document.getElementById('adminPass').value;
+            const errorMsg = document.getElementById('errorMsg');
+            const loginBtn = document.getElementById('loginBtn');
+
+            errorMsg.style.display = 'none';
+            loginBtn.disabled      = true;
+            loginBtn.textContent   = 'Signing in...';
+
+            try {
+                const response = await fetch(`${API_BASE}/api/admin/login`, {
+                    method:  'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body:    JSON.stringify({ username, password })
+                });
+
+                const result = await response.json();
+
+                if (result.success) {
+                    // Store admin session
+                    sessionStorage.setItem('kegg_admin',      result.admin.username);
+                    sessionStorage.setItem('kegg_admin_role', result.admin.role);
+                    sessionStorage.setItem('kegg_admin_id',   result.admin.id);
+
+                    // Redirect to admin panel
+                    window.location.href = 'admin.html';
+                } else {
+                    errorMsg.textContent   = result.message || 'Invalid username or password.';
+                    errorMsg.style.display = 'block';
+                    loginBtn.disabled      = false;
+                    loginBtn.textContent   = 'Sign In →';
+                }
+
+            } catch (err) {
+                errorMsg.textContent   = 'Could not connect to server. Make sure the backend is running.';
+                errorMsg.style.display = 'block';
+                loginBtn.disabled      = false;
+                loginBtn.textContent   = 'Sign In →';
+            }
+        });
+    </script>
+
+</body>
+</html>

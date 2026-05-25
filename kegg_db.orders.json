@@ -1,0 +1,94 @@
+[{
+  "_id": {
+    "$oid": "6a0a1aa8fc21538e704068f0"
+  },
+  "ref": "KEGG-990582",
+  "customer": {
+    "name": "Sky Guial",
+    "phone": "9269318608",
+    "email": "skyguial04@gmail.com"
+  },
+  "items": [
+    {
+      "name": "Bacon Rice Bowl",
+      "price": 119,
+      "quantity": 1,
+      "img": "images/baconricebowl.jpg"
+    },
+    {
+      "name": "2pcs Chicken Wings w/ Rice",
+      "price": 89,
+      "quantity": 1,
+      "img": "images/chicken.jpg"
+    }
+  ],
+  "subtotal": 208,
+  "customization": 15,
+  "processing": 11,
+  "total": 234,
+  "paymentMethod": "Cash",
+  "pickupDate": "2026-05-20",
+  "pickupTime": "14:30",
+  "notes": "None",
+  "status": "Preparing",
+  "createdAt": {
+    "$date": "2026-05-17T19:44:40.392Z"
+  },
+  "updatedAt": {
+    "$date": "2026-05-19T22:55:04.715Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "6a0a308d73dd7ead2b84fd09"
+  },
+  "ref": "KEGG-713000",
+  "customer": {
+    "name": "sky guial",
+    "phone": "9269318608",
+    "email": "skyguial04@gmail.com"
+  },
+  "items": [
+    {
+      "name": "Salted Caramel Frappe",
+      "price": 118,
+      "quantity": 1,
+      "img": "images/salcarfrappe.jpg"
+    },
+    {
+      "name": "Chicken Pesto Sandwich",
+      "price": 159,
+      "quantity": 1,
+      "img": "images/3 Pork Bulgogi Sandwich.jpg"
+    },
+    {
+      "name": "Ramyeon Corndog",
+      "price": 129,
+      "quantity": 1,
+      "img": "images/4 Ramyeon Corndogs.jpg"
+    },
+    {
+      "name": "Fries",
+      "price": 89,
+      "quantity": 1,
+      "img": "images/fries.jpg"
+    }
+  ],
+  "subtotal": 495,
+  "customization": 15,
+  "processing": 11,
+  "total": 521,
+  "paymentMethod": "Cash",
+  "pickupDate": "2026-05-19",
+  "pickupTime": "8:30",
+  "notes": "None",
+  "status": "Preparing",
+  "createdAt": {
+    "$date": "2026-05-17T21:18:05.352Z"
+  },
+  "updatedAt": {
+    "$date": "2026-05-19T22:55:03.345Z"
+  },
+  "__v": 0
+}]
